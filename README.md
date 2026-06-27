@@ -1,4 +1,4 @@
-![Bot Image](/foto_menu.jpeg)
+ ![Bot Image](/foto_menu.jpeg)
 
 # 🤖 Bot System Hub
 
