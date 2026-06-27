@@ -1,5 +1,5 @@
 // ══════════════════════════════════════════════════════════════
-//   INSTALAÇÃO DE DEPENDÊNCIAS — MELIODAS BOT
+//   INSTALAÇÃO DE DEPENDÊNCIAS 
 //   by Gaspar Devs
 //   Uso: node instalacao.js
 // ══════════════════════════════════════════════════════════════
@@ -21,7 +21,7 @@ const warn = (msg) => console.log(`${amarelo}[AVISO]${reset} ${msg}`);
 const erro = (msg) => console.log(`${vermelho}[ERRO]${reset} ${msg}`);
 
 console.log(`\n${negrito}${azul}╔══════════════════════════════════════╗`);
-console.log(`║      MELIODAS BOT — INSTALAÇÃO       ║`);
+console.log(`║      BOT-SYSTEM-HUB — INSTALAÇÃO       ║`);
 console.log(`╚══════════════════════════════════════╝${reset}\n`);
 
 // ── 1. Verifica versão do Node ──────────────────────────────
