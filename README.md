@@ -131,3 +131,16 @@ Veja o arquivo `LICENSE` para mais detalhes.
 
 Criado por **gaspardevs**  
 Base oficial do **Meliodas Bot (reformulada)**
+
+---
+
+## 🌐 Suporte
+
+<div align="center">
+
+| Plataforma | Link |
+|---|---|
+| 📢 Canal | [Canal WhatsApp](https://whatsapp.com/channel/0029VbBUJVj0gcfO9obTtN04) |
+
+</div>
+---
