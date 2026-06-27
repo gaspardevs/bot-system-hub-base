@@ -1,6 +1,6 @@
 const config = require("../../settings/config.json");
 
-const menu = (prefix, pushname, dono, numerodono, nomebot, hora, Isvip) => {
+const menu = (prefix, pushname, dono, numerodono, nomebot, hora) => {
     return `
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ┃      BOT-SYSTEM-HUB                
@@ -42,7 +42,7 @@ const menu = (prefix, pushname, dono, numerodono, nomebot, hora, Isvip) => {
 };
 exports.menu = menu;
 
-const menuadm = (prefix, pushname, dono, numerodono, nomebot, hora, Isvip) => {
+const menuadm = (prefix, pushname, dono, numerodono, nomebot, hora) => {
 return `
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ┃      BOT-SYSTEM-HUB                
@@ -84,7 +84,7 @@ return `
 };
 exports.menuadm = menuadm;
 
-const menudono = (prefix, pushname, dono, numerodono, nomebot, hora, Isvip) => {
+const menudono = (prefix, pushname, dono, numerodono, nomebot, hora) => {
 return `
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ┃      BOT-SYSTEM-HUB                
