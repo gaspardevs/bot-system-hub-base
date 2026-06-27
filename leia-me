@@ -1,0 +1,188 @@
+//==============================//
+        | BOT-SYSTEM-HUB |
+//==============================//
+
+   ✦  o melhor bot de zap  ✦
+   criador: Gaspar Devs </>
+
+
+    //=========================================================================//
+                                 | REGRAS DE USO |
+    //========================================================================//
+     1-MANTER OS CREDITOS DO CRIADOR AJUDA A VALORIZAR O TRABALHO DE QUEM FEZ
+     2-QUAL QUER DUVIDA ENTRA EM CONTATO COM WA.ME/351924423740
+     3-ADICIONA COMANDO DEPOIS DO SWITCH(COMMANDFINAL) CONFORME ESTA NA INDEX
+     SEMPRE: 
+     
+     COMANDO DE MEMBRO
+     case 'nome': {
+     await reagir(conn, m, "reação");
+     await reply("mensagem do bot")
+     break;
+     }
+
+     4- SE FOR COMANDO PARA ADIMIN
+     case 'nome': {
+      if (!isGroup) { await reply('❌ Apenas em grupos.'); 
+      break; 
+      }
+      const meta = await getGroupMeta(conn, from);
+      const isAdmCmd = isAdminInMeta(meta, sender) || isDono;
+      if (!isAdmCmd) { await reply('❌ Apenas administradores podem usar este comando.'); 
+      break; 
+      }
+
+      resto do comando...
+      break;
+      }
+
+      5- SE FOR COMANDO DONO 
+      case 'nome': {
+      if (!isDono) { await reply('❌ Apenas dono do bot.'); 
+      break; 
+      if (!isGroup) { await reply(' Apenas em grupos); //se for comando de grupo
+      break;
+      }
+      resto do comando...
+      break;
+      }
+      6- NÃO ME RESPONSABILIZO POR QUAISQUER DANOS OU USO NEGATIVO DO BOT.
+
+
+
+//==============================//
+      | SOBRE ESTA VERSÃO |
+//==============================//
+
+ESTA É UMA BASE PARA VOCÊ CIAR SEU BOT DO ZERO E APRENDER.
+
+CRIE E COLOCA SUA CRIATIVIDADE EM PRATICA, APROVEITE E USES O SEU BOT PARA INTENÇÃO BOAS
+
+//==============================//
+   | ESTRUTURA DE PASTAS |
+//==============================//
+
+meliodas-bot/
+ ├─ database/
+ │   ├─ fotomenu/        → foto usada no menu
+ │   ├─ menus/           → menu.js 
+ │   ├─ warns/           → guarda as advertências (+adv) de cada grupo
+ │   ├─ configu_gp.json  → configurações de cada grupo (antilink, bemvindo, etc.)
+ ├─ Bot-session/    → sessão do WhatsApp (criada ao conectar)
+ ├─ node_modules/        → dependências (criada pelo instalador)
+ ├─ settings/
+ │   ├─ ativacoes.json   → comandos bloqueados/desbloqueados globalmente
+ │   ├─ config.json      → configuração principal do bot
+ │   ├─ config1.json     → números dos subdonos
+ │   ├─ message.json     → mensagens automáticas do bot
+ │   └─ reacao.json      → emoji de reação por comando
+ ├─ conncts.js           → liga o bot ao WhatsApp 
+ ├─ consts.js            → data/hora
+ ├─ instalacao.js        → instala tudo automaticamente
+ ├─ leia-me              → este ficheiro
+ ├─ bot.js          → coração do bot, processa os comandos 
+ ├─ package.json         → dependências do projeto
+ └─ package-lock.json    → versões exatas das dependências
+
+
+//==============================//
+   | INSTALAÇÃO — PASSO A PASSO |
+//==============================//
+
+1- Garante que tens o Node.js 18 ou superior instalado.
+   (Termux: pkg install nodejs)
+
+2- Abre a pasta do bot no terminal:
+   cd bot-system-hub
+
+3- Corre o instalador automático:
+   node instalacao.js
+
+   Isto vai:
+     - criar as pastas e ficheiros de configuração em falta
+     - instalar todas as dependências do bot (Baileys, etc.)
+     - instalar o PM2 (necessário para o comando +reiniciar)
+
+4- Edita o ficheiro settings/config.json com os teus dados:
+     "prefix"       → o prefixo dos comandos (ex: "-")
+     "dono"         → o teu nome
+     "numerodono"   → o teu número com indicativo (ex: 351912345678)
+     "numerobot"    → o número que o bot vai usar 
+     "nomebot"      → o nome do bot
+
+5- (Opcional) Edita settings/config1.json se quiseres subdonos
+   (até 6 números, dono1 a dono6).
+
+6- Inicia o bot:
+   npm start
+
+7- Escolhe como ligar:
+     [1] QR Code      → abre o WhatsApp > Aparelhos Conectados > escaneia
+     [2] Pareamento    → insere o número e usa o código gerado no WhatsApp
+
+8- Pronto! O bot fica online e a sessão é guardada em Bot-session/
+   (não precisas de ligar de novo a não ser que apagues essa pasta).
+
+//================================//
+   | NOTAS DE SETTINGS | 
+//================================//
+
+1- no numero do bot coloca outro numero qual quer
+ nem que ser seja um numero qual quer mas tem que ser um que nao seja o seu... 
+
+
+//==============================//
+   | COMANDOS PRINCIPAIS |
+//==============================//
+
+Usa ${"-"}menu (ou o teu prefixo) dentro do WhatsApp para veres o menu
+completo de comandos de membro, admin e dono — tudo já vem pronto,
+não precisas de configurar comando a comando.
+
+Resumo rápido:
+  -menu        → menu de comandos para todos
+  -menuadm     → menu de administração de grupo
+  -menudono    → menu exclusivo do dono/subdonos
+
+
+//==============================//
+     | NOTAS IMPORTANTES |
+//==============================//
+
+- NÃO apagues a pasta bot-session, ou vais ter de ligar o bot
+  de novo (QR/pareamento).
+- NÃO partilhes a pasta bot-session com ninguém — quem a tiver
+  consegue controlar o teu WhatsApp.
+- Se o bot der erro ao iniciar, confirma que correste o
+  "node instalacao.js" primeiro e que o config.json está bem
+  preenchido (sem deixar campos vazios tipo "seunumero").
+
+
+//==============================//
+        | SUPORTE |
+//==============================//
+
+DOU SUPORTE NA CONEXÃO. Se o bot der algum erro, vai ao canal e
+manda print/descrição do erro.
+
+
+//==============================//
+        | CRÉDITOS |
+//==============================//
+
+1- CRIADOR DA BASE: Gaspar Devs </>
+
+
+//==============================//
+        | NÚMEROS |
+//==============================//
+
+1- Gaspar: wa.me//351924423740
+
+
+//==============================//
+        | CANAIS |
+//==============================//
+
+1- Canal Gaspar: https://whatsapp.com/channel/0029VbBUJVj0gcfO9obTtN04
+
