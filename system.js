@@ -175,33 +175,6 @@ const getAtivacao = (groupId, chave) => {
   return cfg[groupId]?.ativacoes?.[chave] ?? false;
 };
 
-
-// ── Temp dir ───────────────────────────────────────────────────
-const getTmpDir = () => {
-  const dir = process.env.MELIODAS_TMP
-    ? path.resolve(process.env.MELIODAS_TMP)
-    : path.resolve('./temp');
-  try { if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true }); } catch (_) {}
-  return dir;
-};
-
-const cleanupOldTempFiles = (dir, maxAgeMs = 1000 * 60 * 60 * 6) => {
-  try {
-    if (!fs.existsSync(dir)) return;
-    const now = Date.now();
-    for (const file of fs.readdirSync(dir)) {
-      try {
-        const p  = path.join(dir, file);
-        const st = fs.statSync(p);
-        if (now - st.mtimeMs > maxAgeMs) {
-          if (st.isDirectory()) fs.rmSync(p, { recursive: true, force: true });
-          else fs.unlinkSync(p);
-        }
-      } catch (_) {}
-    }
-  } catch (_) {}
-};
-
 // ── Frases ─────────────────────────────────────────────────────
 const frasesMotivacionais = [
   "A persistência transforma sonhos em realidade.",
