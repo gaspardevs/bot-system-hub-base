@@ -569,7 +569,6 @@ module.exports = async (conn, upsert) => {
 
       const numero   = extractDisplayNumber(sender);
       const isCmd    = text.startsWith(prefix);
-      const isVipUser = isVip(sender);
 
       // ════════════════════════════════════════════════════════
       //   LOG DE MENSAGENS (comandos E mensagens normais)
@@ -586,7 +585,6 @@ module.exports = async (conn, upsert) => {
           colors.gray(`│ nome    : `) + colors.white(pushname)                     + '\n' +
           colors.gray(`│ adm?    : `) + (isAdmin  ? colors.green('sim') : colors.red('não')) + '\n' +
           colors.gray(`│ dono?   : `) + (isDono   ? colors.green('sim') : colors.red('não')) + '\n' +
-          colors.gray(`│ vip?    : `) + (isVipUser ? colors.yellow('sim') : colors.gray('não')) + '\n' +
           colors.gray(`│ ${conteudo}`)                                              + '\n' +
           colors.gray(`│ hora    : `) + colors.gray(hora)                          + '\n' +
           colors.bold(colors.blue('└─────────────────────────────────────────'))
@@ -597,7 +595,6 @@ module.exports = async (conn, upsert) => {
           colors.gray(`│ número  : `) + colors.white(numero)                       + '\n' +
           colors.gray(`│ nome    : `) + colors.white(pushname)                     + '\n' +
           colors.gray(`│ dono?   : `) + (isDono   ? colors.green('sim') : colors.red('não')) + '\n' +
-          colors.gray(`│ vip?    : `) + (isVipUser ? colors.yellow('sim') : colors.gray('não')) + '\n' +
           colors.gray(`│ ${conteudo}`)                                              + '\n' +
           colors.gray(`│ hora    : `) + colors.gray(hora)                          + '\n' +
           colors.bold(colors.cyan('└─────────────────────────────────────────'))
@@ -700,7 +697,7 @@ module.exports = async (conn, upsert) => {
         // │                    MENUS                            │
         // └─────────────────────────────────────────────────────┘
         case 'menu': {
-          const txt  = menuMod.menu(prefix, pushname, config.dono, config.numerodono, config.nomebot, hora, isVipUser ? '✅' : '❌');
+          const txt  = menuMod.menu(prefix, pushname, config.dono, config.numerodono, config.nomebot, hora);
           const foto = getFotoMenu();
           if (foto) {
             await conn.sendMessage(from, { image: { url: foto }, caption: txt }, { quoted: m });
@@ -716,7 +713,7 @@ module.exports = async (conn, upsert) => {
             await reply('❌ Apenas administradores podem ver este menu.');
             break;
           }
-          const txt  = menuMod.menuadm(prefix, pushname, config.dono, config.numerodono, config.nomebot, hora, isVipUser ? '✅' : '❌');
+          const txt  = menuMod.menuadm(prefix, pushname, config.dono, config.numerodono, config.nomebot, hora);
           const foto = getFotoMenu();
           if (foto) {
             await conn.sendMessage(from, { image: { url: foto }, caption: txt }, { quoted: m });
@@ -731,7 +728,7 @@ module.exports = async (conn, upsert) => {
             await reply('❌ Apenas o dono pode ver este menu.');
             break;
           }
-          const txt  = menuMod.menudono(prefix, pushname, config.dono, config.numerodono, config.nomebot, hora, isVipUser ? '✅' : '❌');
+          const txt  = menuMod.menudono(prefix, pushname, config.dono, config.numerodono, config.nomebot, hora);
           const foto = getFotoMenu();
           if (foto) {
             await conn.sendMessage(from, { image: { url: foto }, caption: txt }, { quoted: m });
