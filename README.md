@@ -140,7 +140,7 @@ Base oficial do **Meliodas Bot (reformulada)**
 
 | Plataforma | Link |
 |---|---|
-| 📢 Canal | [Canal WhatsApp](https://whatsapp.com/channel/0029VbBUJVj0gcfO9obTtN04) |
+| 📢 Canal | [Bot-System-Hub](https://whatsapp.com/channel/0029VbBUJVj0gcfO9obTtN04) |
 
 </div>
 ---
